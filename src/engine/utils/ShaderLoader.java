@@ -15,6 +15,7 @@ public class ShaderLoader {
             while((line = reader.readLine()) != null)
                 str.append(line).append("\n");
             reader.close();
+            Log.info(str.toString());
             return str.toString();
         } catch (IOException e) {
             Log.error("Couldn't read shader file.");

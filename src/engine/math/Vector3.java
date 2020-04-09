@@ -2,8 +2,6 @@ package engine.math;
 
 import engine.core.Cloneable;
 
-import java.util.Vector;
-
 public class Vector3 implements Cloneable<Vector3> {
 
     public float x, y, z;

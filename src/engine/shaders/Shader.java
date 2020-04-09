@@ -3,22 +3,16 @@ package engine.shaders;
 import engine.config.Config;
 import engine.config.ShaderConfig;
 import engine.core.Log;
+import engine.math.Matrix4;
+import engine.utils.BufferUtil;
 import engine.utils.ShaderLoader;
+import org.lwjgl.BufferUtils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.nio.FloatBuffer;
 import java.util.HashMap;
 
 import static org.lwjgl.opengl.GL11.GL_FALSE;
-import static org.lwjgl.opengl.GL20.GL_COMPILE_STATUS;
-import static org.lwjgl.opengl.GL20.glCompileShader;
-import static org.lwjgl.opengl.GL20.glCreateProgram;
-import static org.lwjgl.opengl.GL20.glCreateShader;
-import static org.lwjgl.opengl.GL20.glGetShaderInfoLog;
-import static org.lwjgl.opengl.GL20.glGetShaderi;
-import static org.lwjgl.opengl.GL20.glShaderSource;
-import static org.lwjgl.opengl.GL20C.*;
+import static org.lwjgl.opengl.GL20.*;
 
 public class Shader {
 
@@ -26,8 +20,10 @@ public class Shader {
     private HashMap<String, Integer> uniforms;
     public static Config config = new ShaderConfig();
 
+    private static FloatBuffer matrixBuffer = BufferUtils.createFloatBuffer(16);
+
     public Shader(String vertex, String fragment) {
-        uniforms = new HashMap<String, Integer>();
+        uniforms = new HashMap<>();
         init(vertex, fragment);
         if (program == 0)
         {
@@ -72,6 +68,12 @@ public class Shader {
             System.exit(-1);
         }
         uniforms.put(variable, location);
+    }
+
+    public void uploadUniform(String variable, Matrix4 value) {
+        value.store(matrixBuffer);
+        matrixBuffer.flip();
+        glUniformMatrix4fv(uniforms.get(variable), false, matrixBuffer);
     }
 
     public void dispose() {
