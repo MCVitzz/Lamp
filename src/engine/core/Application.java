@@ -1,5 +1,7 @@
 package engine.core;
 
+import engine.renderer.Renderer;
+
 import static org.lwjgl.opengl.GL11.*;
 
 public abstract class Application {
@@ -26,8 +28,6 @@ public abstract class Application {
         Log.info("Application running on OpenGL " + glGetString(GL_VERSION));
         Log.info("Application using Graphics card " + glGetString(GL_RENDERER));
         while (!window.isCloseRequested()) {
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            glClearColor(background.r, background.g, background.b, background.a);
             preDraw();
             draw();
             postDraw();
@@ -43,7 +43,7 @@ public abstract class Application {
     public abstract void finish();
 
     private void preDraw() {
-
+        Renderer.clear(background);
     }
 
     private void postDraw() {

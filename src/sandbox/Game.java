@@ -4,6 +4,7 @@ import engine.core.Application;
 import engine.core.Colour;
 import engine.math.Vector3;
 import engine.models.Quad;
+import engine.renderer.Renderer;
 import engine.renderer.buffers.QuadVBO;
 import engine.shaders.Shader;
 
@@ -35,9 +36,13 @@ public class Game extends Application {
     }
 
     public void draw() {
+
+        Renderer.beginScene();
+
         shader.bind();
-        quadVBO.draw();
-        shader.unbind();
+        Renderer.submit(quadVBO);
+
+        Renderer.endScene();
     }
 
     public void finish() {

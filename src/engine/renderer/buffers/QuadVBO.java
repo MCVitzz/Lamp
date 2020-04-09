@@ -23,7 +23,6 @@ public class QuadVBO extends VBO {
     }
 
     public void draw() {
-        glBindVertexArray(vao);
         glDrawElements(GL_TRIANGLES, size, GL_UNSIGNED_INT, 0);
     }
 
@@ -43,5 +42,15 @@ public class QuadVBO extends VBO {
 
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, BufferUtil.createIntBuffer(quad.getIndices()), GL_STATIC_DRAW);
+    }
+
+    @Override
+    public void bind() {
+        glBindVertexArray(vao);
+    }
+
+    @Override
+    public void unbind() {
+        glBindVertexArray(0);
     }
 }

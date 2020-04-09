@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0df2e4f3-2b38-4f82-b92e-fd4626e3136c" name="Default Changelist" comment="" />
+    <list default="true" id="0df2e4f3-2b38-4f82-b92e-fd4626e3136c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/core/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/core/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/renderer/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/renderer/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/renderer/buffers/QuadVBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/renderer/buffers/QuadVBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/renderer/buffers/VBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/renderer/buffers/VBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sandbox/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sandbox/Game.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +23,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1aH4ojwsSIV5LBbk5jsSZLHEmv9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -23,6 +35,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
@@ -56,7 +69,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586379361562</updated>
-      <workItem from="1586379362888" duration="11433000" />
+      <workItem from="1586379362888" duration="16056000" />
+      <workItem from="1586442085452" duration="1228000" />
     </task>
     <servers />
   </component>
@@ -64,30 +78,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1586383648590">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1586439822203">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586383648590" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586439822203" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586379445448">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586379445448" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1586391309430">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1586443439598">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586391309430" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1586391309430">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586443439598" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1586443439598">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586391309430" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1586391309430">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586443439598" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1586443439598">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586391309430" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1586391309430">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586443439598" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1586443439598">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586391309430" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586443439598" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586391384685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
