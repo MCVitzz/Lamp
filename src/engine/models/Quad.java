@@ -1,9 +1,9 @@
 package engine.models;
 
+import engine.math.Matrix4;
 import engine.math.Vector3;
-import engine.renderer.buffers.QuadVBO;
 
-public class Quad {
+public class Quad extends Model {
 
     Vector3[] vertices;
     int[] indices;
@@ -14,8 +14,8 @@ public class Quad {
     public Quad(Vector3[] vertices, int[] indices) {
         this.vertices = vertices;
         this.indices = indices;
-        position = new Vector3(1,0,0);
-        rotation = new Vector3(0,0,0);
+        position = new Vector3(0, 0, 0);
+        rotation = new Vector3(0, 0, 0);
         scale = 1;
     }
 
@@ -43,7 +43,14 @@ public class Quad {
         return indices;
     }
 
-    public void getModelMatrix() {
-
+    public Matrix4 getModelMatrix() {
+        Matrix4 matrix = new Matrix4();
+        matrix.identity();
+        matrix.translate(position);
+        matrix.rotate((float) Math.toRadians(rotation.x), new Vector3(1.0f, 0.0f, 0.0f));
+        matrix.rotate((float) Math.toRadians(rotation.y), new Vector3(0.0f, 1.0f, 0.0f));
+        matrix.rotate((float) Math.toRadians(rotation.z), new Vector3(0.0f, 0.0f, 1.0f));
+        matrix.scale(scale);
+        return matrix;
     }
 }

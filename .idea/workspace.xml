@@ -2,18 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0df2e4f3-2b38-4f82-b92e-fd4626e3136c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lwjgl_javadoc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engine/renderer/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl_glfw.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lwjgl_opengl.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/shaders/terrainFragmentShader.glsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/shaders/terrainVertexShader.glsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/core/Timing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/events/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/events/EventTrigger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/events/Listener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/math/SmoothFloat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/models/Mesh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/models/Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/renderer/buffers/BufferElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/renderer/buffers/BufferLayout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/renderer/buffers/IBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/renderer/buffers/QuadVAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/renderer/buffers/VAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/renderer/camera/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/renderer/camera/CameraController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/renderer/camera/PerspectiveCamera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/renderer/camera/PerspectiveCameraController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/scene/GameObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/scene/Transform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/scene/terrain/Terrain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/scene/terrain/TerrainMesh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/shaders/ShaderDataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/shaders/TerrainShader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/utils/Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lamp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lamp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lamp/META-INF/Lamp.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/res/shaders/fragmentShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/res/shaders/fragmentShader.glsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/shaders/vertexShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/res/shaders/vertexShader.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/core/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/core/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/core/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/core/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/core/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/core/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/math/Maths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/math/Maths.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/math/Matrix4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/math/Matrix4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/math/Vector2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/math/Vector2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/math/Vector3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/math/Vector3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/models/Quad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/models/Quad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/renderer/Camera.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/renderer/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/renderer/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/renderer/buffers/QuadVBO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/renderer/buffers/VBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/renderer/buffers/VBO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/shaders/Shader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/shaders/Shader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/utils/BufferUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/utils/BufferUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/utils/ShaderLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/utils/ShaderLoader.java" afterDir="false" />
@@ -28,6 +60,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -39,22 +72,37 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/lwjgl-opengl/lwjgl-opengl-natives-windows-x86.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/CityBuilderGame" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Game">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sandbox.Game" />
+      <module name="Lamp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sandbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sandbox.test" />
       <module name="Lamp" />
       <extension name="coverage">
         <pattern>
@@ -69,6 +117,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Game" />
+        <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -83,57 +132,100 @@
       <option name="presentableId" value="Default" />
       <updated>1586379361562</updated>
       <workItem from="1586379362888" duration="16056000" />
-      <workItem from="1586442085452" duration="18832000" />
+      <workItem from="1586442085452" duration="24230000" />
+      <workItem from="1586613219681" duration="646000" />
+      <workItem from="1586613979869" duration="30817000" />
+      <workItem from="1586699980900" duration="15827000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1586458191166">
+    <state x="586" y="198" key="#Inspections" timestamp="1586632661078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586458191166" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586379445448">
+    <state x="586" y="198" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1586632661078" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1586650531584">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586379445448" />
-    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1586460479052">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586650531584" />
+    <state x="442" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586631066435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586460479052" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1586463538771">
+    <state x="442" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586631066435" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586698644373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586463538771" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1586463538771">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586698644373" />
+    <state x="707" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586658127316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586463538771" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1586463538771">
+    <state x="707" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1586658127316" />
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1586471789423">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586463538771" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1586463538771">
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586471789423" />
+    <state width="1877" height="368" key="GridCell.Tab.0.bottom" timestamp="1586717066498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586463538771" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1586460481753">
+    <state width="1877" height="368" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586717066498" />
+    <state width="1877" height="368" key="GridCell.Tab.0.center" timestamp="1586717066497">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586460481753" />
+    <state width="1877" height="368" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586717066497" />
+    <state width="1877" height="368" key="GridCell.Tab.0.left" timestamp="1586717066497">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="368" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586717066497" />
+    <state width="1877" height="368" key="GridCell.Tab.0.right" timestamp="1586717066497">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="368" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586717066497" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1586653373596">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586653373596" />
     <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586457902347">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586457902347" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1586454509873">
+    <state x="342" y="140" key="new project wizard" timestamp="1586472038518">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586454509873" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586458042811">
+    <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1586472038518" />
+    <state x="803" y="277" key="refactoring.ChangeSignatureDialog" timestamp="1586640204903">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586458042811" />
+    <state x="803" y="277" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586640204903" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1586717034929">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586717034929" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586705208711">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586705208711" />
+    <state x="682" y="432" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1586629996147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="682" y="432" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586629996147" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sandbox/Game.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Lamp$Game.ic" NAME="Game Coverage Results" MODIFIED="1586698556916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>sandbox.*</FILTER>
+    </SUITE>
   </component>
 </project>

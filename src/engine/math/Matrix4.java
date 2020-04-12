@@ -1,8 +1,7 @@
 package engine.math;
 
-import engine.core.Log;
-
 import java.nio.FloatBuffer;
+import java.util.Arrays;
 
 public class Matrix4 {
     public float[][] values;
@@ -101,10 +100,8 @@ public class Matrix4 {
     }
 
     public void mul(Matrix4 other) {
-        for (int i=0; i<4; i++)
-        {
-            for (int j=0; j<4; j++)
-            {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 this.set(i, j, values[i][0] * other.get(0, j) +
                         values[i][1] * other.get(1, j) +
                         values[i][2] * other.get(2, j) +
@@ -120,69 +117,42 @@ public class Matrix4 {
 
     public static Matrix4 mul(Matrix4 m1, Matrix4 m2) {
         Matrix4 matrix = new Matrix4();
-        for (int i=0; i<4; i++)
-        {
-            for (int j=0; j<4; j++)
-            {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 matrix.set(i, j, m1.get(i, 0) * m2.get(0, j) +
-                        m1.get(i,1) * m2.get(1, j) +
-                        m1.get(i,2) * m2.get(2, j) +
-                        m1.get(i,3) * m2.get(3, j));
+                        m1.get(i, 1) * m2.get(1, j) +
+                        m1.get(i, 2) * m2.get(2, j) +
+                        m1.get(i, 3) * m2.get(3, j));
             }
         }
-        return  matrix;
-    }
-
-//    public static Matrix4 projection(float fov, float near, float far) {
-//        Matrix4 projectionMatrix = new Matrix4();
-//        float aspectRatio = (float) Application.window.width / (float) Application.window.height;
-//        float yScale = (float) ((1f / Math.tanthis.values[ath.toRadians(fov / 2f))));
-//        float xScale = yScale / aspectRatio;
-//        float frustumLength = far - near;
-//
-//        projectionMatrix.values[0][0] = xScale;
-//        projectionMatrix.values[1][1] = yScale;
-//        projectionMatrix.values[2][2] = -((far + near) / frustumLength);
-//        projectionMatrix.values[2][3] = -1;
-//        projectionMatrix.values[3][2] = -((2 * near * far) / frustumLength);
-//        projectionMatrix.values[3][3] = 0;
-//
-//        return  projectionMatrix;
-//    }
-//
-    public static Matrix4 transformation(Vector3 position, Vector3 rotation, float scale) {
-        Matrix4 matrix = new Matrix4();
-        matrix.identity();
-        matrix.translate(position);
-        matrix.rotate((float) Math.toRadians(rotation.x), new Vector3(1.0f, 0.0f, 0.0f));
-        matrix.rotate((float) Math.toRadians(rotation.y), new Vector3(0.0f, 1.0f, 0.0f));
-        matrix.rotate((float) Math.toRadians(rotation.z), new Vector3(0.0f, 0.0f, 1.0f));
-        matrix.scale(scale);
         return matrix;
     }
 
+
+    @SuppressWarnings("DuplicatedCode")
     public void rotate(float angle, Vector3 axis) {
         float c = (float) Math.cos(angle);
         float s = (float) Math.sin(angle);
         float oneminusc = 1.0f - c;
-        float xy = axis.x*axis.y;
-        float yz = axis.y*axis.z;
-        float xz = axis.x*axis.z;
-        float xs = axis.x*s;
-        float ys = axis.y*s;
-        float zs = axis.z*s;
+        float xy = axis.x * axis.y;
+        float yz = axis.y * axis.z;
+        float xz = axis.x * axis.z;
+        float xs = axis.x * s;
+        float ys = axis.y * s;
+        float zs = axis.z * s;
 
-        float f00 = axis.x*axis.x*oneminusc+c;
-        float f01 = xy*oneminusc+zs;
-        float f02 = xz*oneminusc-ys;
+        float f00 = axis.x * axis.x * oneminusc + c;
+        float f01 = xy * oneminusc + zs;
+        float f02 = xz * oneminusc - ys;
         // n[3] not used
-        float f10 = xy*oneminusc-zs;
-        float f11 = axis.y*axis.y*oneminusc+c;
-        float f12 = yz*oneminusc+xs;
+        float f10 = xy * oneminusc - zs;
+        float f11 = axis.y * axis.y * oneminusc + c;
+        float f12 = yz * oneminusc + xs;
         // n[7] not used
-        float f20 = xz*oneminusc+ys;
-        float f21 = yz*oneminusc-xs;
-        float f22 = axis.z*axis.z*oneminusc+c;
+        float f20 = xz * oneminusc + ys;
+        float f21 = yz * oneminusc - xs;
+        float f22 = axis.z * axis.z * oneminusc + c;
+
 
         float t00 = this.values[0][0] * f00 + this.values[1][0] * f01 + this.values[2][0] * f02;
         float t01 = this.values[0][1] * f00 + this.values[1][1] * f01 + this.values[2][1] * f02;
@@ -224,5 +194,31 @@ public class Matrix4 {
         buffer.put(this.values[3][2]);
         buffer.put(this.values[3][3]);
     }
-    
+
+    public String toString() {
+        StringBuilder buf = new StringBuilder();
+        buf.append(this.values[0][0]).append(' ').append(this.values[1][0]).append(' ').append(this.values[2][0]).append(' ').append(this.values[3][0]).append('\n');
+        buf.append(this.values[0][1]).append(' ').append(this.values[1][1]).append(' ').append(this.values[2][1]).append(' ').append(this.values[3][1]).append('\n');
+        buf.append(this.values[0][2]).append(' ').append(this.values[1][2]).append(' ').append(this.values[2][2]).append(' ').append(this.values[3][2]).append('\n');
+        buf.append(this.values[0][3]).append(' ').append(this.values[1][3]).append(' ').append(this.values[2][3]).append(' ').append(this.values[3][3]).append('\n');
+        return buf.toString();
+    }
+
+    public Matrix4 copy() {
+        Matrix4 m = new Matrix4();
+        float[][] copy = new float[4][4];
+        for (int i = 0; i < values.length; i++) {
+            System.arraycopy(values[i], 0, copy[i], 0, values[i].length);
+        }
+        m.values = copy;
+        return m;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Matrix4 matrix4 = (Matrix4) o;
+        return Arrays.equals(values, matrix4.values);
+    }
 }

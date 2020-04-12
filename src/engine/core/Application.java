@@ -2,8 +2,6 @@ package engine.core;
 
 import engine.renderer.Renderer;
 
-import static org.lwjgl.opengl.GL11.*;
-
 public abstract class Application {
 
     private String name;
@@ -11,10 +9,11 @@ public abstract class Application {
     private Colour background;
     private int height;
     private int width;
+    protected float delta;
 
     public static Window window;
 
-    public Application(String appName, int width, int height) {
+    protected Application(String appName, int width, int height) {
         this.name = appName;
         this.width = width;
         this.height = height;
@@ -24,9 +23,6 @@ public abstract class Application {
 
     public void run() {
         start();
-        Log.info("Application started successfully");
-        Log.info("Application running on OpenGL " + glGetString(GL_VERSION));
-        Log.info("Application using Graphics card " + glGetString(GL_RENDERER));
         while (!window.isCloseRequested()) {
             preDraw();
             draw();
@@ -43,11 +39,14 @@ public abstract class Application {
     public abstract void finish();
 
     private void preDraw() {
+        delta = Timing.getInstance().getDelta();
         Renderer.clear(background);
     }
 
     private void postDraw() {
+        input.update();
         window.update();
+        Timing.getInstance().update();
     }
 
     private void pFinish() {

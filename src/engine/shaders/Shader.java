@@ -4,7 +4,6 @@ import engine.config.Config;
 import engine.config.ShaderConfig;
 import engine.core.Log;
 import engine.math.Matrix4;
-import engine.utils.BufferUtil;
 import engine.utils.ShaderLoader;
 import org.lwjgl.BufferUtils;
 
@@ -25,8 +24,7 @@ public class Shader {
     public Shader(String vertex, String fragment) {
         uniforms = new HashMap<>();
         init(vertex, fragment);
-        if (program == 0)
-        {
+        if (program == 0) {
             Log.error("Shader creation failed");
             System.exit(1);
         }
@@ -61,8 +59,7 @@ public class Shader {
 
     public void addUniform(String variable) {
         int location = glGetUniformLocation(program, variable);
-        if (location == 0xFFFFFFFF)
-        {
+        if (location == 0xFFFFFFFF) {
             Log.error(this.getClass().getName() + " Error: Could not find uniform: " + variable);
             new Exception().printStackTrace();
             System.exit(-1);

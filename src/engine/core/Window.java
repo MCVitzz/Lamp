@@ -1,10 +1,11 @@
 package engine.core;
 
+import engine.renderer.Renderer;
 import org.lwjgl.glfw.GLFWVidMode;
+import org.lwjgl.opengl.GLUtil;
 
+import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.opengl.GL45.*;
-import static org.lwjgl.opengl.GL.createCapabilities;
 
 
 public class Window {
@@ -12,7 +13,7 @@ public class Window {
     public final int height;
     public final int width;
 
-    Window(String name, int width, int height) {
+    public Window(String name, int width, int height) {
         this.height = height;
         this.width = width;
         if (!glfwInit()) {
@@ -20,6 +21,7 @@ public class Window {
             System.exit(-1);
         }
         glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+        glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
         id = glfwCreateWindow(width, height, name, 0, 0);
         if (id == 0) {
             Log.error("Window couldn't be created.");
@@ -29,10 +31,12 @@ public class Window {
         glfwHideWindow(id);
     }
 
-    void show() {
+    public void show() {
         glfwShowWindow(id);
         glfwMakeContextCurrent(id);
-        createCapabilities();
+        Renderer.createCapabilities();
+        //DEBUG STUFF
+        GLUtil.setupDebugMessageCallback();
 
         GLFWVidMode vidMode = glfwGetVideoMode(glfwGetPrimaryMonitor());
         if (vidMode != null) {
@@ -60,10 +64,12 @@ public class Window {
     }
 
     void close() {
+        glfwFreeCallbacks(id);
         glfwDestroyWindow(id);
+        glfwTerminate();
     }
 
-    boolean isCloseRequested() {
+    public boolean isCloseRequested() {
         return glfwWindowShouldClose(id);
     }
 }

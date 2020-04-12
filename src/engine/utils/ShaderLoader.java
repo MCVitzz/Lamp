@@ -3,7 +3,9 @@ package engine.utils;
 import engine.config.Config;
 import engine.core.Log;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class ShaderLoader {
     public static String loadShader(Config config, String fileName) {
@@ -12,10 +14,9 @@ public class ShaderLoader {
             StringBuilder str = new StringBuilder();
             BufferedReader reader = new BufferedReader(new FileReader(path));
             String line = "";
-            while((line = reader.readLine()) != null)
+            while ((line = reader.readLine()) != null)
                 str.append(line).append("\n");
             reader.close();
-            Log.info(str.toString());
             return str.toString();
         } catch (IOException e) {
             Log.error("Couldn't read shader file.");
