@@ -1,9 +1,10 @@
-﻿using Lamp.Scene.Lights;
-using Lamp.Core;
+﻿using Lamp.Core;
 using Lamp.Models;
 using Lamp.Rendering.Buffers;
 using Lamp.Rendering.Camera;
+using Lamp.Scene.Lights;
 using Lamp.Shaders;
+using System.Collections.Generic;
 
 namespace Lamp.Scene.Terrains
 {
@@ -12,7 +13,8 @@ namespace Lamp.Scene.Terrains
         private int Side;
         public Colour Colour;
         private static readonly BufferLayout Layout = new BufferLayout(new BufferElement[] { 
-            new BufferElement("position", ShaderDataType.VEC3)
+            new BufferElement("position", ShaderDataType.VEC3),
+            new BufferElement("normal", ShaderDataType.VEC3),
         });
 
         public FlatTerrain(int side, Colour colour)
@@ -23,32 +25,50 @@ namespace Lamp.Scene.Terrains
             Shader.AddUniform("modelMatrix");
             Shader.AddUniform("viewMatrix");
             Shader.AddUniform("projectionMatrix");
-            Shader.AddUniform("colour");
+            Shader.AddUniform("terrainColour");
+            Shader.AddUniform("lightColour");
+            Shader.AddUniform("lightPosition");
             Colour = colour;
         }
 
         public ModelData GenerateModel(int side)
         {
-            float[] vertices = new float[3 * 4]; //3 floats for each vertex
+            List<float> vertices = new List<float>(); //3 floats for each vertex
             ushort[] indices = { 0, 1, 2, 0, 3, 2 };
 
-            vertices[0] = -side;
-            vertices[1] = 0;
-            vertices[2] = -side;
+            vertices.Add(-side);
+            vertices.Add(0);
+            vertices.Add(-side);
+            //Normal
+            vertices.Add(0);
+            vertices.Add(1);
+            vertices.Add(0);
 
-            vertices[3] = +side;
-            vertices[4] = 0;
-            vertices[5] = -side;
+            vertices.Add(+side);
+            vertices.Add(0);
+            vertices.Add(-side);
+            //Normal
+            vertices.Add(0);
+            vertices.Add(1);
+            vertices.Add(0);
 
-            vertices[6] = +side;
-            vertices[7] = 0;
-            vertices[8] = +side;
+            vertices.Add(+side);
+            vertices.Add(0);
+            vertices.Add(+side);
+            //Normal
+            vertices.Add(0);
+            vertices.Add(1);
+            vertices.Add(0);
 
-            vertices[9] = -side;
-            vertices[10] = 0;
-            vertices[11] = +side;
+            vertices.Add(-side);
+            vertices.Add(0);
+            vertices.Add(+side);
+            //Normal
+            vertices.Add(0);
+            vertices.Add(1);
+            vertices.Add(0);
 
-            return new ModelData(vertices, indices);
+            return new ModelData(vertices.ToArray(), indices);
         }
 
         public override void Draw(ICamera camera, Light sun)
@@ -57,7 +77,9 @@ namespace Lamp.Scene.Terrains
             Shader.UpdateUniform("modelMatrix", Transform.GetMatrix());
             Shader.UpdateUniform("viewMatrix", camera.GetViewMatrix());
             Shader.UpdateUniform("projectionMatrix", camera.GetProjectionMatrix());
-            Shader.UpdateUniform("colour", Colour);
+            Shader.UpdateUniform("terrainColour", Colour);
+            Shader.UpdateUniform("lightColour", sun.Colour.ToVector3());
+            Shader.UpdateUniform("lightPosition", sun.Position);
             Vao.BindAll();
             Vao.Draw();
         }

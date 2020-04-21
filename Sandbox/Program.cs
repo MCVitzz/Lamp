@@ -65,23 +65,20 @@ namespace Sandbox
         {
             button = new Button();
             RawModelData rmd = Loader.LoadOBJ("Resources/Models/Tree.obj");
-            obj = new Cube(AssetManager.LoadOBJ("Resources/Models/Tree.obj"));
+            obj = new Cube();
             texture = new Texture("Resources/Textures/tree.png");
-            //texture.Bind();
             scene = new SceneBase();
             scene.Camera = new OrbitalCamera(Vector3.Zero, new Vector3(0, 900, 0), Width / (float)Height);
             scene.Sun = new Sun(new Colour(1, 1, 1));
             AddWindowResizeListener((int width, int height) => scene.Camera.OnWindowResize(width, height));
             scene.Terrain = new FlatTerrain(16, new Colour(0.31f, 0.56f, 0.37f));
+            scene.GenerateObjs(35, -16, 16, AssetManager.LoadOBJ("Resources/Models/Tree.obj"));
         }
 
         public override void Update(float delta)
         {
             scene.Update(delta);
             Renderer.BeginScene(scene);
-            Renderer.Submit(scene.Terrain);
-            Renderer.Submit(obj);
-            //Renderer.Submit(button);
             Renderer.EndScene();
         }
 

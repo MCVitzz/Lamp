@@ -27,7 +27,7 @@ namespace Lamp.Scene
             Matrix4 rotation = rx * ry * rz;
 
             Matrix4 scale = Matrix4.CreateScale(Scale);
-            return translation * rotation * scale;
+            return scale * rotation * translation;
         }
     }
 

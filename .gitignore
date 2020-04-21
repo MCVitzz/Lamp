@@ -8,6 +8,11 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+
+#Whitelist Resources Folder
+!*/Sandbox/Resources
+
+
 # User-specific files
 *.rsuser
 *.suo

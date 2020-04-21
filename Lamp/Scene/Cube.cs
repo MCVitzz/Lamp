@@ -9,13 +9,13 @@ namespace Lamp.Scene
     public class Cube : GameObject
     {
 
-        private static readonly BufferLayout Layout = new BufferLayout(new BufferElement[] {
+        public static readonly BufferLayout Layout = new BufferLayout(new BufferElement[] {
             new BufferElement("position", ShaderDataType.VEC3),
             new BufferElement("textureCoords", ShaderDataType.VEC2),
             new BufferElement("normals", ShaderDataType.VEC3),
         });
 
-        public Cube(ModelData model) : base()
+        public Cube() : base()
         {
             Shader = new Shader("Resources/Shaders/Textured/Vertex.glsl", "Resources/Shaders/Textured/Fragment.glsl");
             Shader.AddUniform("modelMatrix");
@@ -23,8 +23,17 @@ namespace Lamp.Scene
             Shader.AddUniform("projectionMatrix");
             Shader.AddUniform("lightPosition");
             Shader.AddUniform("lightColour");
+        }
+
+        public Cube(ModelData model) : this()
+        {
             Vao = new VAO(model, Layout);
         }
+
+        public Cube(VAO vao) : this()
+        {
+            Vao = vao;
+        } 
 
         public override void Draw(ICamera camera, Light sun)
         {
