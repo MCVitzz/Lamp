@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lamp", "Lamp\Lamp.csproj", "{50E5751F-C36A-48AB-91EE-69AB99D47B7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{DF2A6146-BCD3-4DCD-A27C-D6ECF56A1312}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50E5751F-C36A-48AB-91EE-69AB99D47B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E5751F-C36A-48AB-91EE-69AB99D47B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E5751F-C36A-48AB-91EE-69AB99D47B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E5751F-C36A-48AB-91EE-69AB99D47B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF2A6146-BCD3-4DCD-A27C-D6ECF56A1312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF2A6146-BCD3-4DCD-A27C-D6ECF56A1312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF2A6146-BCD3-4DCD-A27C-D6ECF56A1312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF2A6146-BCD3-4DCD-A27C-D6ECF56A1312}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D25B277A-7723-430E-AB94-BF09AB71898C}
+	EndGlobalSection
+EndGlobal
