@@ -6,6 +6,7 @@ using Lamp.Scene.Terrains;
 using OpenTK;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Lamp.Scene
 {

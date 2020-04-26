@@ -1,15 +1,16 @@
 ﻿using Lamp.Models;
 using OpenTK.Graphics.OpenGL4;
+using System.Net;
 
 namespace Lamp.Rendering.Buffers
 {
     public class VAO
     {
-        private int Id;
+        private readonly int Id;
         public VBO Vbo;
         public BufferLayout Layout;
         public IBO Ibo;
-        private int Size;
+        protected int Size;
 
         public VAO()
         {
@@ -45,7 +46,6 @@ namespace Lamp.Rendering.Buffers
         public void SetPointers(BufferLayout layout)
         {
             Layout = layout;
-            BindAll();
             int i = 0;
             foreach(BufferElement element in layout.GetElements())
             {

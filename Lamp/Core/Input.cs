@@ -23,7 +23,7 @@ namespace Lamp.Core
             OldCursorPosition = Vector2.Zero;
         }
 
-        public void Update(int width, int height, KeyboardState keyboard, MouseState mouse)
+        public void Update(KeyboardState keyboard, MouseState mouse)
         {
             Keyboard = keyboard;
             OldCursorPosition = new Vector2(CursorPostion.X, CursorPostion.Y);

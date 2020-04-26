@@ -12,7 +12,7 @@ namespace Lamp.Core
         public int Width { get; private set; }
         public int Height { get; private set; }
 
-        private List<Action<int, int>> WindowResizeCallbacks;
+        private readonly List<Action<int, int>> WindowResizeCallbacks;
 
         public Application(int width, int height, string name)
         {

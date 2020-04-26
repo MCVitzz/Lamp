@@ -41,7 +41,7 @@ namespace Lamp.Core
             update((float)e.Time);
             Context.SwapBuffers();
             if (Active)
-                Input.Instance.Update(Width, Height, Keyboard.GetState(), Mouse.GetState());
+                Input.Instance.Update(Keyboard.GetState(), Mouse.GetState());
             base.OnRenderFrame(e);
         }
 

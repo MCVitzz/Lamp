@@ -26,11 +26,16 @@ namespace Lamp.Shaders
 
         public void UpdateUniform(string name, Colour colour)
         {
-            GL.Uniform4(uniforms[name], colour.ToVector4());
+            UpdateUniform(name, colour.ToVector4());
         }
         public void UpdateUniform(string name, Vector3 vector)
         {
             GL.Uniform3(uniforms[name], vector.X, vector.Y, vector.Z);
+        }
+
+        public void UpdateUniform(string name, Vector4 vector)
+        {
+            GL.Uniform4(uniforms[name], vector.X, vector.Y, vector.Z, vector.W);
         }
 
         public void UpdateUniform(string name, Matrix4 matrix)

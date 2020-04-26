@@ -23,7 +23,7 @@ namespace Lamp.Rendering
 
         public static void EndScene()
         {
-            foreach(GameObject obj in ToDraw)
+            foreach (GameObject obj in ToDraw)
             {
                 obj.Draw(Scene.Camera, Scene.Sun);
             }

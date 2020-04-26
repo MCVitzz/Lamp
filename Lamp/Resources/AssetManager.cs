@@ -1,5 +1,7 @@
 ﻿using Lamp.Models;
 using OpenTK;
+using OpenTK.Graphics.OpenGL4;
+using Serilog;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Advanced;
 using SixLabors.ImageSharp.PixelFormats;
@@ -15,7 +17,7 @@ namespace Lamp.Resources
         public static List<byte> GetTexutre(string path)
         {
             //Load the image
-            Image<Rgba32> image = SixLabors.ImageSharp.Image.Load<Rgba32>(path);
+            Image<Rgba32> image = Image.Load<Rgba32>(path);
 
             //ImageSharp loads from the top-left pixel, whereas OpenGL loads from the bottom-left, causing the texture to be flipped vertically.
             //This will correct that, making the texture display properly.
@@ -65,9 +67,6 @@ namespace Lamp.Resources
 
         public static ModelData LoadOBJ(string path)
         {
-            List<int> vertexIndices = new List<int>();
-            List<int> uvIndices = new List<int>();
-            List<int> normalIndices = new List<int>();
             List<Vertex> vertices = new List<Vertex>();
             List<Vector3> normals = new List<Vector3>();
             List<Vector2> uvs = new List<Vector2>();
@@ -148,9 +147,11 @@ namespace Lamp.Resources
                 }
                 else
                 {
-                    Vertex duplicateVertex = new Vertex((ushort)vertices.Count, previousVertex.Position);
-                    duplicateVertex.TextureIndex = newTextureIndex;
-                    duplicateVertex.NormalIndex = newNormalIndex;
+                    Vertex duplicateVertex = new Vertex((ushort)vertices.Count, previousVertex.Position)
+                    {
+                        TextureIndex = newTextureIndex,
+                        NormalIndex = newNormalIndex
+                    };
                     previousVertex.DuplicateVertex = duplicateVertex;
                     vertices.Add(duplicateVertex);
                     indices.Add(duplicateVertex.Index);
@@ -214,5 +215,6 @@ namespace Lamp.Resources
             }
             return lines.ToArray();
         }
+
     }
 }
