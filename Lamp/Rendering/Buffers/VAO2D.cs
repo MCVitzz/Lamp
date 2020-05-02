@@ -19,7 +19,7 @@ namespace Lamp.Rendering.Buffers
             Vbo.Bind();
             Vbo.Allocate(vertices);
         }
-        new public void BindAll()
+        public override void BindAll()
         {
             Bind();
             Vbo.Bind();

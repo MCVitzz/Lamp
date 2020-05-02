@@ -1,19 +1,20 @@
 ﻿using Lamp.Resources;
 using OpenTK.Graphics.OpenGL4;
+using Serilog;
 using System;
 using System.IO;
-using PixelFormat = OpenTK.Graphics.OpenGL4.PixelFormat;
 
 namespace Lamp.Rendering
 {
     public class Texture
     {
-        private readonly int Id;
+        public readonly int Id;
 
         public Texture(byte[] image)
         {
             int side = (int)Math.Sqrt(image.Length / 4);
             Id = GL.GenTexture();
+            Bind();
             GL.TexImage2D(TextureTarget.Texture2D,
                 0,
                 PixelInternalFormat.Rgba,
@@ -26,6 +27,7 @@ namespace Lamp.Rendering
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.LinearMipmapLinear);
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Nearest);
             GL.GenerateMipmap(GenerateMipmapTarget.Texture2D);
+            //GL.GenerateMipmap(GenerateMipmapTarget.Texture2D);
         }
 
         //public Texture(BmpData data)
@@ -49,16 +51,19 @@ namespace Lamp.Rendering
         {
 
         }
- 
+
         public Texture(string texturePath) : this(AssetManager.GetTexutre(texturePath).ToArray())
         {
 
         }
 
-        public void Bind(int slot)
+        public void Bind()
         {
-            GL.BindTextureUnit(slot, Id);
+            GL.ActiveTexture(TextureUnit.Texture0);
+            GL.BindTexture(TextureTarget.Texture2D, Id);
         }
+
+
         public void Unbind()
         {
             GL.BindTexture(TextureTarget.Texture2D, 0);

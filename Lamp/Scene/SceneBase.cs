@@ -1,4 +1,5 @@
 ﻿using Lamp.Models;
+using Lamp.Rendering;
 using Lamp.Rendering.Buffers;
 using Lamp.Rendering.Camera;
 using Lamp.Scene.Lights;
@@ -22,11 +23,6 @@ namespace Lamp.Scene
             GameObjects = new List<GameObject>();
         }
 
-        public void Draw()
-        {
-            Terrain.Draw(Camera, Sun);
-        }
-
         public void Update(float delta)
         {
             Camera.Move(delta);
@@ -35,10 +31,11 @@ namespace Lamp.Scene
         public void GenerateObjs(int count, float min, float max, ModelData data)
         {
             Random random = new Random();
-            VAO vao = new VAO(data, Cube.Layout);
+            Texture texture = new Texture("Resources/Textures/tree.png");
+            TexturedModel model = new TexturedModel(data, texture, Cube.Layout);
             for (int i = 0; i < count; i++)
             {
-                Cube obj = new Cube(vao);
+                Cube obj = new Cube(model);
                 obj.Transform.Position = new Vector3(GetFloat(random, min, max), 0, GetFloat(random, min, max));
                 obj.Transform.Scale = .1f;
                 GameObjects.Add(obj);

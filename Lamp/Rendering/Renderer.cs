@@ -1,4 +1,6 @@
-﻿using Lamp.Scene;
+﻿using Lamp.Rendering.Renderers;
+using Lamp.Scene;
+using Lamp.Scene.Terrains;
 using System.Collections.Generic;
 
 namespace Lamp.Rendering
@@ -7,26 +9,25 @@ namespace Lamp.Rendering
     {
         private static SceneBase Scene;
         private static List<GameObject> ToDraw;
+        private static readonly GameObjectRenderer GameObjectRenderer = new GameObjectRenderer();
+        private static readonly TerrainRenderer TerrainRenderer = new TerrainRenderer();
 
         public static void BeginScene(SceneBase scene)
         {
             Scene = scene;
             ToDraw = new List<GameObject>();
             ToDraw.AddRange(scene.GameObjects);
-            ToDraw.Add(scene.Terrain);
         }
 
         public static void Submit(GameObject gameObject)
         {
-            gameObject.Draw(Scene.Camera, Scene.Sun);
+            ToDraw.Add(gameObject);
         }
 
         public static void EndScene()
         {
-            foreach (GameObject obj in ToDraw)
-            {
-                obj.Draw(Scene.Camera, Scene.Sun);
-            }
+            TerrainRenderer.Render(new List<FlatTerrain>(new FlatTerrain[] { Scene.Terrain }), Scene.Camera, Scene.Sun);
+            GameObjectRenderer.Render(ToDraw, Scene.Camera, Scene.Sun);
             Scene = null;
             ToDraw = null;
         }

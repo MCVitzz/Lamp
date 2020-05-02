@@ -2,8 +2,8 @@
 {
     public struct ModelData
     {
-        public readonly float[] Vertices;
-        public readonly ushort[] Indices;
+        public ushort[] Indices;
+        public float[] Vertices;
 
         public ModelData(float[] vertices, ushort[] indices)
         {

@@ -7,10 +7,17 @@ namespace Lamp.GUI.Components
     public class Button : Component
     {
         private string Value;
+        private TextComponent Label;
 
         public Button(string text)
         {
             Value = text;
+        }
+
+        public void SetValue(string value)
+        {
+            Value = value;
+            Label.Value = Value;
         }
 
         public void Setup()
@@ -40,6 +47,7 @@ namespace Lamp.GUI.Components
             };
             AddChild(txt);
             AddChild(ctr);
+            Label = txt;
         }
     }
 }

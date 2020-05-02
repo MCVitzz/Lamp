@@ -4,7 +4,7 @@ namespace Lamp.Rendering.Buffers
 {
     public class GuiVAO
     {
-        private int Id;
+        private readonly int Id;
         private int Size;
         private VBO Vbo;
         private BufferLayout Layout;

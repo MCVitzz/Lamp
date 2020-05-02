@@ -59,8 +59,9 @@
     <Compile Include="GUI\Text\Fonts.cs" />
     <Compile Include="GUI\Text\TextComponent.cs" />
     <Compile Include="GUI\Text\TextManager.cs" />
+    <Compile Include="Models\Model.cs" />
     <Compile Include="Models\ModelData.cs" />
-    <Compile Include="Models\RawModelData.cs" />
+    <Compile Include="Models\TexturedModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendering\Buffers\BufferElement.cs" />
     <Compile Include="Rendering\Buffers\BufferLayout.cs" />
@@ -72,6 +73,9 @@
     <Compile Include="Rendering\Camera\ICamera.cs" />
     <Compile Include="Rendering\Camera\OrbitalCamera.cs" />
     <Compile Include="Rendering\Renderer.cs" />
+    <Compile Include="Rendering\Renderers\BaseRenderer.cs" />
+    <Compile Include="Rendering\Renderers\GameObjectRenderer.cs" />
+    <Compile Include="Rendering\Renderers\TerrainRenderer.cs" />
     <Compile Include="Rendering\Texture.cs" />
     <Compile Include="Resources\AssetManager.cs" />
     <Compile Include="Resources\FontLoader.cs" />

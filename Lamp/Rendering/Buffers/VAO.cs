@@ -1,6 +1,5 @@
 ﻿using Lamp.Models;
 using OpenTK.Graphics.OpenGL4;
-using System.Net;
 
 namespace Lamp.Rendering.Buffers
 {
@@ -46,6 +45,7 @@ namespace Lamp.Rendering.Buffers
         public void SetPointers(BufferLayout layout)
         {
             Layout = layout;
+            BindAll();
             int i = 0;
             foreach(BufferElement element in layout.GetElements())
             {
@@ -76,7 +76,7 @@ namespace Lamp.Rendering.Buffers
             }
         }
 
-        public void BindAll()
+        public virtual void BindAll()
         {
             Bind();
             Vbo.Bind();

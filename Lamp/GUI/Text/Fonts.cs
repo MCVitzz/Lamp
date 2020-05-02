@@ -7,7 +7,7 @@ namespace Lamp.GUI.Text
 {
     public class Fonts
     {
-        private static InstalledFontCollection InstalledFontCollection = new InstalledFontCollection();
+        private static readonly InstalledFontCollection InstalledFontCollection = new InstalledFontCollection();
         public static Dictionary<string, QFont> Defaults = GetDefaults();
 
         public static QFont GetFont(string font, int size)

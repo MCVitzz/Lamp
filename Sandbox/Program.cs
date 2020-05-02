@@ -11,6 +11,7 @@ using Lamp.Scene.Lights;
 using Lamp.Scene.Terrains;
 using Lamp.Utilities;
 using OpenTK;
+using OpenTK.Graphics.OpenGL4;
 using System;
 
 namespace Sandbox
@@ -53,7 +54,6 @@ namespace Sandbox
         //  };
 
         SceneBase scene;
-        Texture texture;
 
         public Program(int width, int height, string name) : base(width, height, name) { }
 
@@ -70,7 +70,6 @@ namespace Sandbox
                     H = new RelativeConstraint(0.9f)
                 }
             };
-            texture = new Texture("Resources/Textures/tree.png");
             GUIManager.AddComponent(container);
             var btn = new Button("Test")
             {
@@ -101,7 +100,6 @@ namespace Sandbox
         {
             scene.Update(delta);
             Renderer.BeginScene(scene);
-            texture.Bind(0);
             Renderer.EndScene();
             GUIManager.DrawComponents();
         }
@@ -110,7 +108,7 @@ namespace Sandbox
         {
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             if (args.Length != 0)
                 Console.WriteLine("Proragm Launched with args: " + args);

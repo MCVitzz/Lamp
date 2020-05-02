@@ -4,7 +4,7 @@ namespace Lamp.Scene
 {
     public class Transform
     {
-        private static Vector3 Zero = new Vector3(0, 0, 0);
+        public static Vector3 Zero = new Vector3(0, 0, 0);
         public Vector3 Position { get; set; }
         public Vector3 Rotation { get; set; }
         public float Scale;

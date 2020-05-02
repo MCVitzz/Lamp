@@ -4,7 +4,7 @@ namespace Lamp.Rendering.Buffers
 {
     public class VBO
     {
-        private int Id;
+        private readonly int Id;
 
         public VBO()
         {
